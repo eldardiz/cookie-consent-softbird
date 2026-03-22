@@ -13,7 +13,7 @@
     accentText:       '#ffffff',
     poweredBy: {
       label: 'Softbird',
-      url:   'https://softbird.agency',
+      url:   'https://www.softbird.fr',
       logo:  ''   // set to an image URL to show a logo instead of text
     },
     categories: {
