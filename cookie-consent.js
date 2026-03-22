@@ -300,7 +300,7 @@
     openPreferences: showModal,
     showBanner:      showBanner,
     hasConsent: function (cat) { var c = getConsent(); return c ? !!c[cat] : false; },
-    reset:      function ()    { localStorage.removeItem(CFG.storageKey); showBanner(); }
+    reset:      function ()    { localStorage.removeItem(CFG.storageKey); setTimeout(showBanner, delay); }
   };
 
 })();
