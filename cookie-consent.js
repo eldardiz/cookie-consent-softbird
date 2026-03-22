@@ -280,7 +280,19 @@
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') hideModal(); });
 
   // ─── init ────────────────────────────────────────────────────────────────────
-  if (!getConsent()) showBanner();
+  var delay = (typeof CFG.bannerDelay === 'number') ? CFG.bannerDelay : 3000;
+
+  function initBanner() {
+    setTimeout(function () {
+      if (!getConsent()) showBanner();
+    }, delay);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initBanner);
+  } else {
+    initBanner();
+  }
 
   // ─── public API ──────────────────────────────────────────────────────────────
   window.CookieConsent = {
